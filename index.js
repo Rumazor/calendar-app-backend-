@@ -21,6 +21,7 @@ app.use(express.json());
 // RUTAS
 // todo lo que este archivo a exportar lo va habilitar en esta ruta
 app.use("/api/auth", require("./routes/auth"));
+app.use("/api/events", require("./routes/events"));
 
 //excuchar peticion
 app.listen(process.env.PORT, () => {
