@@ -14,7 +14,7 @@ app.use(cors());
 
 // MIDDLEWARES
 //Directorio publico
-app.use(express.static("public"));
+// app.use(express.static("public"));
 // Lectura y parseo del body
 app.use(express.json());
 
@@ -22,6 +22,12 @@ app.use(express.json());
 // todo lo que este archivo a exportar lo va habilitar en esta ruta
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/events", require("./routes/events"));
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    ok: true,
+  });
+});
 
 //excuchar peticion
 app.listen(process.env.PORT, () => {
